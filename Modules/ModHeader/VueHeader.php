@@ -12,11 +12,11 @@ class VueHeader
     }
 
     public function afficheHeader() {
-        echo
-        '<h1>TROUVE TON STAGE</h1>
-        <div id="image">
-            <img src="./Images/Valise.png" alt="" />
-        </div>';
+        $this->render('Header.html');
+    }
+
+    public function render($path,$data=null) {
+        include_once "$path";
     }
 
 }
