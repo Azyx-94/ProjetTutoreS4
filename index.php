@@ -17,7 +17,7 @@
         ?>
     </header>
 
-    <div class="main">
+    <main>
         <?php
         /*
         if (isset($_GET['module']))
@@ -39,10 +39,30 @@
 
         ?>
 
-    </div>
+    </main>
 </body>
 
     <footer>
+        <div class="titreSite1">
+            <a href = "">
+                <div id="titreImage">
+                    <h1>TROUVE TON STAGE</h1>
+                    <div class="image1">
+                        <img src="./Images/Valise.png" alt="" />
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="RS">
+            <img class="imgRS" src="./Images/Youtube.png" alt="" />
+            <img class="imgRS" src ="./Images/Twitter.png" alt="" />
+            <img class="imgRS" src="./Images/Instagram.png" alt="" />
+        </div>
+
+        <div class="Copyright">
+
+        </div>
 
     </footer>
 

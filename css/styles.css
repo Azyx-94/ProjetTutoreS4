@@ -18,14 +18,18 @@ header {
     right:0;
 }
 
-header h1 {
+.titreSite a {
+    text-decoration:none;
+}
+
+.titreSite h1 {
     font-family: Blippo, fantasy;
     font-weight: bold;
     color:black;
     margin-left:30px;
 }
 
-#image img {
+.image img {
     width:50px;
     height:50px;
     margin-left:280px;
@@ -33,23 +37,83 @@ header h1 {
     position:absolute;
 }
 
-
-
 /****************************************************/
 /* NAV */
 /****************************************************/
 
+nav {
+    padding-left:360px;
+    margin-top:-50px;
+}
+
+.liens1 {
+    text-decoration:none;
+    font-family:Calibri, sans-serif;
+    font-size:20px;
+    margin-left:75px;
+    color:black;
+}
 
 /****************************************************/
 /* MAIN */
 /****************************************************/
 
+main {
+    position:absolute;
+    left:0;
+    right:0;
+    margin-top:90px;
+    height:502px;
+    background-color:#040E3A;
+}
 
 /****************************************************/
 /* FOOTER */
 /****************************************************/
 
 footer {
-    height:80px;
+    background-color:#3179DC;
+    height:130px;
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
 }
 
+.titreSite1 {
+    width:375px;
+    height:90px;
+}
+
+.titreSite1 a {
+    text-decoration:none;
+}
+
+.titreSite1 h1 {
+    font-family: Blippo, fantasy;
+    font-weight: bold;
+    color:black;
+    margin-left:30px;
+}
+
+.image1 img {
+    width:50px;
+    height:50px;
+    margin-left:280px;
+    margin-top:-65px;
+    position:absolute;
+}
+
+#titreImage {
+    margin-top: 40px;
+    margin-left: 15px;
+}
+.RS {
+    margin-top:-95px;
+    margin-left:1215px;
+}
+.imgRS {
+    width:50px;
+    height:50px;
+    margin-left:36px;
+}
