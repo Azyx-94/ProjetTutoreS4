@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Accueil</title>
+    <title>Trouve ton stage</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
@@ -19,23 +19,21 @@
 
     <main>
         <?php
-        /*
         if (isset($_GET['module']))
             $module = $_GET['module'];
         else
             $module = "accueil";
 
         switch ($module) {
-            case '[...]':
-                include_once 'Modules/ModConnexion/ModConnexion.php';
-                $mod = new ModConnexion();
+            case 'ModConvention':
+                include_once 'Modules/ModConventionStage/ModConventionStage.php';
+                $mod = new ModConventionStage();
                 break;
             default:
                 include_once 'Modules/ModAccueil/ModAccueil.php';
                 $mod = new ModAccueil();
                 break;
         }
-        */
 
         ?>
 
@@ -43,27 +41,10 @@
 </body>
 
     <footer>
-        <div class="titreSite1">
-            <a href = "">
-                <div id="titreImage">
-                    <h1>TROUVE TON STAGE</h1>
-                    <div class="image1">
-                        <img src="./Images/Valise.png" alt="" />
-                    </div>
-                </div>
-            </a>
-        </div>
-
-        <div class="RS">
-            <img class="imgRS" src="./Images/Youtube.png" alt="" />
-            <img class="imgRS" src ="./Images/Twitter.png" alt="" />
-            <img class="imgRS" src="./Images/Instagram.png" alt="" />
-        </div>
-
-        <div class="Copyright">
-
-        </div>
-
+        <?php
+        require_once "Modules/ModFooter/ModFooter.php";
+        new ModFooter();
+        ?>
     </footer>
 
 </html>
