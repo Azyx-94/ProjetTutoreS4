@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Trouve ton stage</title>
+    <title>Convention de stages pour l'IUT de Montreuil</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
