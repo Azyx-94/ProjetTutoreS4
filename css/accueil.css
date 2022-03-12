@@ -1,0 +1,37 @@
+.Bienvenue {
+    border:solid;
+    color:red;
+    font-size:25px;
+    font-weight:bold;
+    font-family:Calibri, sans-serif;
+    padding-bottom:10px;
+    padding-top:10px;
+    text-align:center;
+}
+
+.Consignes {
+    text-align:left;
+    margin-left:10px;
+    font-size:18px;
+    font-family:Calibri, sans-serif;
+    color:white;
+    padding-left:10px;
+    padding-right:10px;
+}
+
+.Documents {
+    margin-left:20px;
+    margin-right:20px;
+}
+
+.Des {
+    color:darkslategrey;
+    font-size:15px;
+    font-family:Calibri, sans-serif;
+    font-weight:bold;
+}
+
+.stage {
+    margin-left:900px;
+    margin-top:-300px;
+}
