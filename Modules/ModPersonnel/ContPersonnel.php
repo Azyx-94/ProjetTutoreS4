@@ -21,7 +21,7 @@ class ContPersonnel
     }
 
     public function connexionForm() {
-        $this->vue->connexionForm();
+
     }
 
     public function inscription() {
@@ -29,7 +29,37 @@ class ContPersonnel
     }
 
     public function inscriptionForm() {
-        $this->vue->inscriptionForm();
+        if (empty($_POST['name']) or empty($_POST['email']) or empty($_POST['password1']) or empty($_POST['password2'])) { // BON
+            $this->vue->render("FichiersHTML/formVide.html");
+        }
+        else if(($_POST['password1']) != ($_POST['password2'])) { // BON
+            $this->vue->render("FichiersHTML/motsDePasseDifferents.html");
+        }
+        else { // NON
+            $id = htmlspecialchars($_POST['name']);
+            $email = htmlspecialchars($_POST['email']);
+            $password = htmlspecialchars($_POST['password1']);
+            $user = $this->modele->getUser($id, $email);
+            if (empty($user)) {
+                $this->vue->render("FichiersHTML/identifantIncorrect.html");
+            }
+            else {
+                $password = password_hash($password, PASSWORD_ARGON2I);
+                $data = array('name' => $id, 'e-mail' => $email, 'password' => $password);
+                $verifPassword = $this->modele->verifPassword($data);
+                if($verifPassword != null) {
+                    $this->vue->render("FichiersHTML/motDePasseDejaCree.html");
+                }
+                else {
+                    $this->modele->updateUser($data);
+                    $this->vue->render("FichiersHTML/formGood.html");
+                }
+            }
+        }
+    }
+
+    public function deconnexion() {
+        $this->vue->deconnexion();
     }
 
 }

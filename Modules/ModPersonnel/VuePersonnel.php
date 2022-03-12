@@ -9,18 +9,15 @@ class VuePersonnel
 
 
     public function connexion() {
-        $this->render("Connexion.html");
-    }
-
-    public function connexionForm() {
-
+        $this->render("FichiersHTML/Connexion.html");
     }
 
     public function inscription() {
-        $this->render("Inscription.html");
+        $this->render("FichiersHTML/Inscription.html");
     }
 
-    public function inscriptionForm() {
+
+    public function deconnexion() {
 
     }
 
