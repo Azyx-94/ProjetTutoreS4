@@ -1,1 +1,28 @@
-<p>salut!!!!!!!</p>
+<head>
+    <link rel="stylesheet" href="css/inscription.css">
+</head>
+
+<section class ="formInscription">
+    <p class="textInscription">
+        Afin que votre inscription soit validée, veillez à bien renseigner correctement votre INE et l'email qui y correspond.
+    </p>
+    <form class="form" action="index.php?module=ModPersonnel&action=connexion" method="post">
+        <div class ="id">
+            <label for="name">Identifiant :</label>
+            <input type="text" id="name" name="user_name">
+        </div>
+        <div class ="e-mail">
+            <label for="e-mail">E-mail :</label>
+            <input type="text" id="e-mail" name="e-mail">
+        </div>
+        <div class ="mdp">
+            <label for="password">Mot de passe :</label>
+            <input id="password" name="password" type="password" minlength="8" required>
+        </div>
+        <div class ="mdp2">
+            <label for="password2">Confirmez votre mot de passe :</label>
+            <input id="password2" name="password2" type="password" minlength="8" required>
+        </div>
+        <input type="submit" class="submit" value="Inscription">
+    </form>
+</section>
