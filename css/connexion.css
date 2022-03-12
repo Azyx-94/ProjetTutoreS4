@@ -1,0 +1,63 @@
+.textConn {
+    font-family:Calibri, sans-serif;
+    font-size:20px;
+    text-align:center;
+    color:white;
+    padding-top:30px;
+}
+
+.textActivation {
+    font-family:Calibri, sans-serif;
+    font-size:10px;
+    text-align:center;
+    color:white;
+}
+
+.textActivation a {
+    text-decoration:none;
+}
+
+.formConnexion {
+    background-color:#3A5BEE;
+    width:500px;
+    height:300px;
+    margin-top:100px;
+    margin-left:500px;
+}
+
+.form {
+    margin-top:30px;
+    padding-left:50px;
+}
+
+.id {
+    font-family:Calibri, sans-serif;
+    font-size:25px;
+    color:white;
+}
+
+#name {
+    width:200px;
+    height:15px;
+    margin-left:51px;
+}
+
+.submit {
+    font-family: Calibri, sans-serif;
+    border-radius:2px;
+    margin-top:20px;
+    margin-left:150px;
+    width:100px;
+}
+
+.mdp {
+    font-family:Calibri, sans-serif;
+    font-size:25px;
+    color:white;
+}
+
+#password {
+    width:200px;
+    height:15px;
+    margin-left:20px;
+}

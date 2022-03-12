@@ -1,0 +1,25 @@
+<head>
+    <link rel="stylesheet" href="css/connexion.css">
+</head>
+
+<section class ="formConnexion">
+    <p class="textConn">
+        Afin de regarder les conventions de stages des étudiants, veuillez-vous connecter à l'aide de votre identifiant et de votre mot de passe.
+    </p>
+    <form class="form" action="" method="post">
+        <div class ="id">
+            <label for="name">Identifiant :</label>
+            <input type="text" id="name" name="user_name">
+        </div>
+        <div class ="mdp">
+            <label for="password">Mot de passe :</label>
+            <input id="password" name="password" type="password">
+        </div>
+        <input type="submit" class="submit" value="Connexion">
+    </form>
+    <p class="textActivation">
+        <a href="index.php?module=ModPersonnel&action=inscription">
+            Vous n'avez pas encore créer de mot de passe ? Veuillez-le faire ici.
+        </a>
+    </p>
+</section>

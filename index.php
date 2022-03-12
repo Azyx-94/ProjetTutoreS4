@@ -29,6 +29,10 @@
                 include_once 'Modules/ModConventionStage/ModConventionStage.php';
                 $mod = new ModConventionStage();
                 break;
+            case 'ModPersonnel':
+                include_once 'Modules/ModPersonnel/ModPersonnel.php';
+                $mod = new ModPersonnel();
+                break;
             default:
                 include_once 'Modules/ModAccueil/ModAccueil.php';
                 $mod = new ModAccueil();
