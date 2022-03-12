@@ -20,4 +20,8 @@ class ContConventionStage
         $this->vue->afficheAccueilConventionStage();
     }
 
+    public function envoyerConventionDeStage() {
+
+    }
+
 }
