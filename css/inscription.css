@@ -19,25 +19,37 @@
     padding-left:50px;
 }
 
-.id {
+.identifiant {
     font-family:Calibri, sans-serif;
     font-size:25px;
     color:white;
 }
 
-.e-mail {
+.adresseMail {
     font-family:Calibri, sans-serif;
     font-size:25px;
     color:white;
 }
 
-#name {
+.motDePasse1 {
+    font-family:Calibri, sans-serif;
+    font-size:25px;
+    color:white;
+}
+
+.motDePasse2 {
+    font-family:Calibri, sans-serif;
+    font-size:25px;
+    color:white;
+}
+
+#id {
     width:200px;
     height:15px;
     margin-left:298px;
 }
 
-#e-mail {
+#email {
     width:200px;
     height:15px;
     margin-left:340px;
@@ -63,16 +75,5 @@
     width:100px;
 }
 
-.mdp {
-    font-family:Calibri, sans-serif;
-    font-size:25px;
-    color:white;
-}
-
-.mdp2 {
-    font-family:Calibri, sans-serif;
-    font-size:25px;
-    color:white;
-}
 
 
