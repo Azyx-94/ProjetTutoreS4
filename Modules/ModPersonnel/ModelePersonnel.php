@@ -9,26 +9,33 @@ class ModelePersonnel extends Connexion
 
     public function getUser($id, $email){
         $req = self::$bdd->prepare("SELECT * FROM tuteur_pedagogique WHERE id = :id and email = :email;");
-        $req->bindParam("name", $id);
+        $req->bindParam("id", $id);
         $req->bindParam("email", $email);
+        $req->execute();
+        return $req->fetch();
+    }
+
+    public function getUserId($id){
+        $req = self::$bdd->prepare("SELECT * FROM tuteur_pedagogique WHERE id = :id;");
+        $req->bindParam("id", $id);
         $req->execute();
         return $req->fetch();
     }
 
     public function verifPassword($data) {
         $req = self::$bdd->prepare("SELECT password from tuteur_pedagogique WHERE id = :id and email = :email;");
-        $req->bindParam("name",$data['id']);
-        $req->bindParam("email",$data['email']);
+        $req->bindParam("id", $data['id']);
+        $req->bindParam("email", $data['email']);
         $req->execute();
-        return $req->$data['password'];
+        return $req->fetch();
     }
 
     public function updateUser($data){
         $req = self::$bdd->prepare("update tuteur_pedagogique set password = :password where id :id and email = :email;");
-        $req->bindParam('name',$data['nom']);
-        $req->bindParam('email',$data['email']);
-        $req->bindParam('password',$data['password']);
-        $req->execute();
+        $req->bindParam("id",$data['id']);
+        $req->bindParam("email",$data['email']);
+        $req->bindParam("password",$data['password']);
+        $req->execute(); // 1 ERREUR
     }
 
 }

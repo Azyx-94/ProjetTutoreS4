@@ -29,16 +29,28 @@
     padding-left:50px;
 }
 
-.id {
+.identifiant {
     font-family:Calibri, sans-serif;
     font-size:25px;
     color:white;
 }
 
-#name {
+.motDePasse {
+    font-family:Calibri, sans-serif;
+    font-size:25px;
+    color:white;
+}
+
+#id {
     width:200px;
     height:15px;
     margin-left:51px;
+}
+
+#password {
+    width:200px;
+    height:15px;
+    margin-left:20px;
 }
 
 .submit {
@@ -49,14 +61,4 @@
     width:100px;
 }
 
-.mdp {
-    font-family:Calibri, sans-serif;
-    font-size:25px;
-    color:white;
-}
 
-#password {
-    width:200px;
-    height:15px;
-    margin-left:20px;
-}

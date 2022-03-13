@@ -7,11 +7,11 @@
         Afin de regarder les conventions de stages des étudiants, veuillez-vous connecter à l'aide de votre identifiant et de votre mot de passe.
     </p>
     <form class="form" action="index.php?module=ModPersonnel&action=connexionForm" method="post">
-        <div class ="id">
-            <label for="name">Identifiant :</label>
-            <input type="text" id="name" name="user_name" placeholder="Identifiant">
+        <div class="identifiant">
+            <label for="id">Identifiant :</label>
+            <input type="text" id="id" name="id" minlength="8" maxlength="8" required placeholder="Identifiant">
         </div>
-        <div class ="mdp">
+        <div class="motDePasse">
             <label for="password">Mot de passe :</label>
             <input id="password" name="password" type="password" placeholder="Mot de passe">
         </div>
