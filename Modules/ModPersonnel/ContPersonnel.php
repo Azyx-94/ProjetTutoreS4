@@ -33,7 +33,7 @@ class ContPersonnel
             $password = htmlspecialchars($_POST['password']);
             $user = $this->modele->getUser($id, $email);
             if (empty($user)) {
-                $this->vue->render("FichiersHTML/identifiantEtEmailIncorrects.html");
+                $this->vue->render("FichiersHTML/identifiantOuEmailIncorrects.html");
             }
             else {
                 $data = array('id' => $id, 'email' => $email);
@@ -55,7 +55,6 @@ class ContPersonnel
         $this->vue->connexion();
     }
 
-    /*
     public function connexionForm() {
         if (empty($_POST['password'])) {
             $this->vue->render("FichiersHTML/formVide.html");
@@ -79,7 +78,6 @@ class ContPersonnel
             }
         }
     }
-    */
 
     public function deconnexion() {
         $this->vue->deconnexion();
