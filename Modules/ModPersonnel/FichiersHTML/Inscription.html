@@ -4,22 +4,22 @@
 
 <section class ="formInscription">
     <p class="textInscription">
-        Afin que votre inscription soit validée, veillez à bien renseigner correctement votre INE et l'email qui y correspond.
+        Afin que votre inscription soit validée, veillez à bien renseigner correctement votre identifiant et l'email qui y correspond.
     </p>
     <form class="form" action="index.php?module=ModPersonnel&action=inscriptionForm" method="post">
-        <div class="identifiant">
+        <div class="LI">
             <label for="id">Identifiant :</label>
             <input type="text" id="id" name="id" minlength="8" maxlength="8" required placeholder="Identifiant (8 chiffres)">
         </div>
-        <div class="adresseMail">
+        <div class="LI">
             <label for="email">E-mail :</label>
             <input type="text" id="email" name="email" placeholder="abcd@iut.univ-paris8.fr">
         </div>
-        <div class="motDePasse1">
+        <div class="LI">
             <label for="password">Mot de passe :</label>
             <input id="password" name="password" type="password" minlength="8" required placeholder="Mot de passe">
         </div>
-        <div class="motDePasse2">
+        <div class="LI">
             <label for="password2">Confirmez votre mot de passe :</label>
             <input id="password2" name="password2" type="password" minlength="8" required placeholder="Confirmez votre mot de passe">
         </div>

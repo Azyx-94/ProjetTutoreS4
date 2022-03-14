@@ -29,11 +29,12 @@ class ModPersonnel
             case "connexionForm":
                 $this->controleur->connexionform();
                 break;
-                /*
+            case "interfaceCompte":
+                $this->controleur->interfaceCompte();
+                break;
             case "deconnexion":
                 $this->controleur->deconnexion();
                 break;
-                */
             default:
                 $this->controleur->connexion();
                 break;

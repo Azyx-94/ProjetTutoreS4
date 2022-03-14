@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Convention de stages pour l'IUT de Montreuil</title>
+    <title>Convention de stages de l'IUT de Montreuil</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
@@ -11,6 +11,7 @@
     <header>
         <?php
         require_once "Connexion.php";
+        session_start();
         require_once "Modules/ModHeader/ModHeader.php";
         Connexion::initConnexion();
         new ModHeader();

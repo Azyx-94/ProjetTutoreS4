@@ -35,7 +35,7 @@ class ModelePersonnel extends Connexion
         $req->bindParam("id",$data['id']);
         $req->bindParam("email",$data['email']);
         $req->bindParam("password",$data['password']);
-        $req->execute(); // 1 ERREUR
+        $req->execute();
     }
 
 }

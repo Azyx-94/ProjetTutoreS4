@@ -15,11 +15,13 @@ class VuePersonnel
         $this->render("FichiersHTML/Connexion.html");
     }
 
-
-    public function deconnexion() {
-
+    public function interfaceCompte() {
+        $this->render("FichiersHTML/Personnel.html");
     }
 
+    public function deconnexion() {
+        $this->render("FichiersHTML/Deconnexion.html");
+    }
 
     public function render($path,$data=null) {
         include_once "$path";

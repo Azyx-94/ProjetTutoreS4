@@ -12,8 +12,8 @@ class ContPersonnel
     private $vue;
 
     public function __construct() {
-        $this->modele = new ModelePersonnel();
-        $this->vue = new VuePersonnel();
+        $this->modele =new ModelePersonnel();
+        $this->vue =new VuePersonnel();
     }
 
     public function inscription() {
@@ -38,7 +38,7 @@ class ContPersonnel
             else {
                 $data = array('id' => $id, 'email' => $email);
                 $passwordDb = $this->modele->verifPassword($data);
-                if ($passwordDb->password==null) { // MARCHE PAS
+                if ($passwordDb->password==null) {
                     $password = password_hash($password, PASSWORD_ARGON2I);
                     $data = array('id' => $id, 'email' => $email, 'password'=> $password);
                     $this->modele->updateUser($data);
@@ -71,18 +71,28 @@ class ContPersonnel
                 if ($verifPassword == false) {
                     $this->vue->render("FichiersHTML/motDePasseIncorrect.html");
                 }
+                else if($verifPassword == true && isset($_SESSION['id'])) {
+                    echo '<section class="erreur">';
+                    echo '<p class="msg">Vous êtes déjà connecté sur le compte ayant pour id : </p>';
+                    echo "$id.</br>";
+                    echo '<a class="retourDeconnexionDC" href="index.php?module=ModPersonnel&action=deconnexion">Deconnexion</a>';
+                    echo '</section>';
+                }
                 else {
-                    $_SESSION['login'] = $id;
-                    $this->vue->render("FichiersHTML/Personnel.html");
+                    $_SESSION['id'] = $id;
+                    $this->vue->render("FichiersHTML/estConnecte.html");
                 }
             }
         }
     }
 
-    /*
+    public function interfaceCompte() {
+        $this->vue->interfaceCompte();
+    }
+
     public function deconnexion() {
+        unset($_SESSION['id']);
         $this->vue->deconnexion();
     }
-    */
 
 }

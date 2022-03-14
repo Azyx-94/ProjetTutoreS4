@@ -2,7 +2,7 @@
     font-family:Calibri, sans-serif;
     font-size:20px;
     text-align:center;
-    color:white;
+    color:black;
     padding-top:30px;
 }
 
@@ -17,7 +17,7 @@
 }
 
 .formConnexion {
-    background-color:#3A5BEE;
+    background-color:#FFFFFF;
     width:500px;
     height:300px;
     margin-top:100px;
@@ -29,16 +29,10 @@
     padding-left:50px;
 }
 
-.identifiant {
+.LIC {
     font-family:Calibri, sans-serif;
     font-size:25px;
-    color:white;
-}
-
-.motDePasse {
-    font-family:Calibri, sans-serif;
-    font-size:25px;
-    color:white;
+    color:black;
 }
 
 #id {
