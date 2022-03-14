@@ -26,14 +26,14 @@ class ModPersonnel
             case "inscriptionForm":
                 $this->controleur->inscriptionForm();
                 break;
-                /*
             case "connexionForm":
                 $this->controleur->connexionform();
                 break;
-                */
+                /*
             case "deconnexion":
                 $this->controleur->deconnexion();
                 break;
+                */
             default:
                 $this->controleur->connexion();
                 break;

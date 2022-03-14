@@ -21,7 +21,7 @@ class ContPersonnel
     }
 
     public function inscriptionForm() {
-        if (empty($_POST['id']) or empty($_POST['email']) or empty($_POST['password']) or empty($_POST['password2'])) { // BON
+        if (empty($_POST['id']) or empty($_POST['email']) or empty($_POST['password']) or empty($_POST['password2'])) {
             $this->vue->render("FichiersHTML/formVide.html");
         }
         else if(($_POST['password']) != ($_POST['password2'])) {
@@ -37,8 +37,8 @@ class ContPersonnel
             }
             else {
                 $data = array('id' => $id, 'email' => $email);
-                $passwordIsNull = $this->modele->verifPassword($data);
-                if ($passwordIsNull == NULL) { // NE MARCHE PAS
+                $passwordDb = $this->modele->verifPassword($data);
+                if ($passwordDb->password==null) { // MARCHE PAS
                     $password = password_hash($password, PASSWORD_ARGON2I);
                     $data = array('id' => $id, 'email' => $email, 'password'=> $password);
                     $this->modele->updateUser($data);
@@ -79,8 +79,10 @@ class ContPersonnel
         }
     }
 
+    /*
     public function deconnexion() {
         $this->vue->deconnexion();
     }
+    */
 
 }

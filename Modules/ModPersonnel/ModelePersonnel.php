@@ -31,7 +31,7 @@ class ModelePersonnel extends Connexion
     }
 
     public function updateUser($data){
-        $req = self::$bdd->prepare("update tuteur_pedagogique set password = :password where id :id and email = :email;");
+        $req = self::$bdd->prepare("update tuteur_pedagogique set password = :password where id =:id and email = :email;");
         $req->bindParam("id",$data['id']);
         $req->bindParam("email",$data['email']);
         $req->bindParam("password",$data['password']);
