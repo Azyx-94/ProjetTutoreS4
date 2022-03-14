@@ -184,6 +184,24 @@ main {
     color:black;
 }
 
+/* n'est pas connecté */
+
+.msgNestPasConnecte {
+    font-family:Calibri, sans-serif;
+    font-weight:bold;
+    font-size:20px;
+    text-align:center;
+    padding-top:120px;
+    color:black;
+}
+
+.retourConnexion {
+    font-family:Calibri, sans-serif;
+    font-size:15px;
+    margin-left:220px;
+    color:black;
+}
+
 /* ConventionStage */
 
 .AP {

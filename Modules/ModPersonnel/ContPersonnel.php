@@ -52,7 +52,12 @@ class ContPersonnel
     }
 
     public function connexion() {
-        $this->vue->connexion();
+        if(isset($_SESSION['id'])) {
+            $this->vue->render("FichiersHTML/Personnel.html");
+        }
+        else {
+            $this->vue->connexion();
+        }
     }
 
     public function connexionForm() {
@@ -87,7 +92,12 @@ class ContPersonnel
     }
 
     public function interfaceCompte() {
-        $this->vue->interfaceCompte();
+        if(!isset($_SESSION['id'])) {
+            $this->vue->render("FichiersHTML/nestPasConnecte.html");
+        }
+        else {
+            $this->vue->interfaceCompte();
+        }
     }
 
     public function deconnexion() {
