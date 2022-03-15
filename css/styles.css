@@ -27,8 +27,8 @@ header {
 }
 
 .titreSite h1 {
-    font-family: Calibri, fantasy;
-    font-weight: bold;
+    font-family:Calibri, fantasy;
+    font-weight:bold;
     color:black;
     margin-left:30px;
 }
@@ -54,7 +54,8 @@ header {
 }
 
 nav {
-    margin-left:800px;
+    width:680px;
+    margin-left:675px; /* 700 */
     margin-right:240px;
     margin-top:-50px;
 }
@@ -63,7 +64,7 @@ nav {
     text-decoration:none;
     font-family:Calibri, sans-serif;
     font-size:20px;
-    margin-left:50px;
+    margin-left:30px; /* 50 */
     color:black;
 }
 
@@ -77,7 +78,82 @@ main {
     right:0;
     margin-top:90px;
     height:502px;
-    background-color:#efefef;
+    background-color:#efefef
+}
+
+.Bienvenue {
+    border:solid;
+    color:#005C09;
+    font-size:25px;
+    font-weight:bold;
+    font-family:Calibri, sans-serif;
+    padding-bottom:10px;
+    padding-top:10px;
+    text-align:center;
+}
+
+.Consignes {
+    text-align:left;
+    margin-left:10px;
+    font-size:18px;
+    font-family:Calibri, sans-serif;
+    font-weight:bold;
+    color:black;
+    padding-left:10px;
+    padding-right:10px;
+}
+
+.Documents {
+    margin-left:20px;
+    margin-right:20px;
+}
+
+.Des {
+    color:#124016;
+    font-size:15px;
+    font-family:Calibri, sans-serif;
+    font-weight:bold;
+}
+
+.stage {
+    margin-left:900px;
+    margin-top:-300px;
+}
+
+.AP {
+    margin-top:50px;
+}
+
+.Annonce {
+    color:black;
+    font-family:Calibri, sans-serif;
+    font-size:24px;
+    text-align:center;
+}
+
+.PhrasePrincipale {
+    color:#717171;
+    font-family:Calibri, sans-serif;
+    font-size:18px;
+    text-align:center;
+}
+
+.insertionPDF {
+    width:900px;
+    height:150px;
+    margin-left:315px;
+    margin-top:70px;
+    background-color:#FFFFFF;
+}
+
+.uploadZone {
+    margin-left:335px;
+    margin-top:10px;
+}
+
+.imgFILE {
+    margin-left:400px;
+    margin-top:15px;
 }
 
 /****************************************************/
