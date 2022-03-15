@@ -1,12 +1,12 @@
 .Annonce {
-    color:white;
+    color:black;
     font-size:40px;
     text-align:center;
     font-family:Calibri, sans-serif;
 }
 
 .PhrasePrincipale {
-    color:green;
+    color:#717171;
     font-size:25px;
     text-align:center;
     font-family:Calibri, sans-serif;
@@ -16,7 +16,7 @@
     width:900px;
     height:150px;
     margin-left:315px;
-    background-color:#3A5BEE;
+    background-color:#FFFFFF;
 }
 
 .uploadZone {

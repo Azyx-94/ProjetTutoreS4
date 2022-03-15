@@ -1,6 +1,6 @@
 .Bienvenue {
     border:solid;
-    color:red;
+    color:#005C09;
     font-size:25px;
     font-weight:bold;
     font-family:Calibri, sans-serif;
@@ -14,7 +14,7 @@
     margin-left:10px;
     font-size:18px;
     font-family:Calibri, sans-serif;
-    color:white;
+    color:black;
     padding-left:10px;
     padding-right:10px;
 }
@@ -25,7 +25,7 @@
 }
 
 .Des {
-    color:darkslategrey;
+    color:#124016;
     font-size:15px;
     font-family:Calibri, sans-serif;
     font-weight:bold;
