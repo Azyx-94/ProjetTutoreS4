@@ -1,0 +1,59 @@
+.formInscription {
+    background-color:#FFFFFF;
+    width:730px;
+    height:300px;
+    margin-top:100px;
+    margin-left:400px;
+}
+
+.textInscription {
+    padding:15px;
+    font-family:Calibri, sans-serif;
+    font-size:20px;
+    text-align:center;
+    color:black;
+}
+
+.form {
+    margin-top:20px;
+    padding-left:50px;
+}
+
+.LI{
+    font-family:Calibri, sans-serif;
+    font-size:25px;
+    color:black;
+}
+
+
+#id {
+    width:200px;
+    height:15px;
+    margin-left:298px;
+}
+
+#email {
+    width:200px;
+    height:15px;
+    margin-left:340px;
+}
+
+#password {
+    width:200px;
+    height:15px;
+    margin-left:267px;
+}
+
+#password2 {
+    width:200px;
+    height:15px;
+    margin-left:100px;
+}
+
+.submit {
+    font-family: Calibri, sans-serif;
+    border-radius:2px;
+    margin-top:20px;
+    margin-left:275px;
+    width:100px;
+}

@@ -81,6 +81,8 @@ main {
     background-color:#efefef
 }
 
+/*ACCEUIL*/
+
 .Bienvenue {
     border:solid;
     color:#005C09;
@@ -91,6 +93,7 @@ main {
     padding-top:10px;
     text-align:center;
 }
+
 
 .Consignes {
     text-align:left;
@@ -119,6 +122,87 @@ main {
     margin-left:900px;
     margin-top:-300px;
 }
+
+/*ErreursDesFormulaires*/
+
+.erreur {
+    background-color:#FFFFFF;
+    width:500px;
+    height:300px;
+    margin-top:100px;
+    margin-left:500px;
+}
+
+.msg {
+    font-family:Calibri, sans-serif;
+    font-weight:bold;
+    font-size:25px;
+    text-align:center;
+    padding-top:120px;
+    color:black;
+}
+
+.retour {
+    font-family:Calibri, sans-serif;
+    font-size:15px;
+    margin-left:230px;
+    color:black;
+}
+
+/* retourDeconnexion (dejaConnecté) */
+
+.retourDeconnexionDC {
+    font-family:Calibri, sans-serif;
+    font-size:15px;
+    margin-left:205px;
+    color:black;
+}
+
+/* ValidationInscriptionOuConnexion */
+
+.validation {
+    background-color:#FFFFFF;
+    width:500px;
+    height:300px;
+    margin-top:100px;
+    margin-left:500px;
+}
+
+.msgValidation {
+    font-family:Calibri, sans-serif;
+    font-weight:bold;
+    font-size:25px;
+    text-align:center;
+    padding-top:120px;
+    color:black;
+}
+
+.lienCompte {
+    font-family:Calibri, sans-serif;
+    font-size:15px;
+    margin-left:175px;
+    color:black;
+}
+
+/* n'est pas connecté */
+
+.msgNestPasConnecte {
+    font-family:Calibri, sans-serif;
+    font-weight:bold;
+    font-size:20px;
+    text-align:center;
+    padding-top:120px;
+    color:black;
+}
+
+.retourConnexion {
+    font-family:Calibri, sans-serif;
+    font-size:15px;
+    margin-left:220px;
+    color:black;
+}
+
+/* ConventionStage */
 
 .AP {
     margin-top:50px;
@@ -154,6 +238,73 @@ main {
 .imgFILE {
     margin-left:400px;
     margin-top:15px;
+}
+
+/*Deconnexion*/
+
+.deconnexion {
+    background-color:#FFFFFF;
+    width:500px;
+    height:300px;
+    margin-top:100px;
+    margin-left:500px;
+}
+
+.msgDeconnexion {
+    font-family:Calibri, sans-serif;
+    font-weight:bold;
+    font-size:25px;
+    text-align:center;
+    padding-top:120px;
+    color:black;
+}
+
+.retourDeconnexion {
+    font-family:Calibri, sans-serif;
+    font-size:15px;
+    margin-left:195px;
+    color:black;
+}
+
+/* partieAdmin */
+.BienvenueAdmin {
+    border:solid;
+    color:#005C09;
+    font-size:25px;
+    font-weight:bold;
+    font-family:Calibri, sans-serif;
+    padding-bottom:10px;
+    padding-top:10px;
+    text-align:center;
+}
+
+.carreAdmin {
+    background-color:#FFFFFF;
+    width:500px;
+    height:300px;
+    margin-top:50px;
+    margin-left:500px;
+}
+
+.lienListeConventionStage {
+    font-family:Calibri, sans-serif;
+    font-size:24px;
+    color:black;
+    text-decoration:none;
+    margin-left:80px;
+
+}
+
+.liens {
+    padding-top:130px;
+}
+
+.retourDeconnexion {
+    font-family:Calibri, sans-serif;
+    font-size:15px;
+    margin-top:200px;
+    margin-left:200px;
+    color:black;
 }
 
 /****************************************************/
