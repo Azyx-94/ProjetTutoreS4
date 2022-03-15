@@ -32,6 +32,9 @@ class ModPersonnel
             case "interfaceCompte":
                 $this->controleur->interfaceCompte();
                 break;
+            case "listeConventionStage":
+                $this->controleur->listeConventionStage();
+                break;
             case "deconnexion":
                 $this->controleur->deconnexion();
                 break;

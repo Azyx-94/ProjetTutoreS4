@@ -19,6 +19,10 @@ class VuePersonnel
         $this->render("FichiersHTML/Personnel.html");
     }
 
+    public function listeConventionStage() {
+        $this->render("FichiersHTML/listeConventionStage.html");
+    }
+
     public function deconnexion() {
         $this->render("FichiersHTML/Deconnexion.html");
     }

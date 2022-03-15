@@ -266,6 +266,47 @@ main {
     color:black;
 }
 
+/* partieAdmin */
+.BienvenueAdmin {
+    border:solid;
+    color:#005C09;
+    font-size:25px;
+    font-weight:bold;
+    font-family:Calibri, sans-serif;
+    padding-bottom:10px;
+    padding-top:10px;
+    text-align:center;
+}
+
+.carreAdmin {
+    background-color:#FFFFFF;
+    width:500px;
+    height:300px;
+    margin-top:50px;
+    margin-left:500px;
+}
+
+.lienListeConventionStage {
+    font-family:Calibri, sans-serif;
+    font-size:24px;
+    color:black;
+    text-decoration:none;
+    margin-left:80px;
+
+}
+
+.liens {
+    padding-top:130px;
+}
+
+.retourDeconnexion {
+    font-family:Calibri, sans-serif;
+    font-size:15px;
+    margin-top:200px;
+    margin-left:200px;
+    color:black;
+}
+
 /****************************************************/
 /* FOOTER */
 /****************************************************/

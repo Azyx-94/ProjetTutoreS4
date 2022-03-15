@@ -100,6 +100,15 @@ class ContPersonnel
         }
     }
 
+    public function listeConventionStage() {
+        if(!isset($_SESSION['id'])) {
+            $this->vue->render("FichiersHTML/nestPasConnecte.html");
+        }
+        else {
+            $this->vue->listeConventionStage();
+        }
+    }
+
     public function deconnexion() {
         unset($_SESSION['id']);
         $this->vue->deconnexion();
