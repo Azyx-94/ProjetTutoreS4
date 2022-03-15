@@ -1,13 +1,17 @@
+.AP {
+    margin-top:50px;
+}
+
 .Annonce {
     color:black;
-    font-size:40px;
+    font-size:24px;
     text-align:center;
     font-family:Calibri, sans-serif;
 }
 
 .PhrasePrincipale {
     color:#717171;
-    font-size:25px;
+    font-size:18px;
     text-align:center;
     font-family:Calibri, sans-serif;
 }
@@ -16,6 +20,7 @@
     width:900px;
     height:150px;
     margin-left:315px;
+    margin-top:70px;
     background-color:#FFFFFF;
 }
 
