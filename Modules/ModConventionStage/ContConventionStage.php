@@ -39,22 +39,27 @@ class ContConventionStage
                 $pdf = new PdfToText("./upload/$pdf");
                 $text = $pdf->Text;
                 $textWithLineBreaks = nl2br($text);
-                echo $textWithLineBreaks;
 
                 $a = explode("\n", $textWithLineBreaks);
-                var_dump($a);
                 echo'<br>';
                 $toutesMesDonnees = array();
-                foreach($a as $val) { // J'avoue j'ai oublié la syntaxe du foreach en PHP
-                    $data = explode(':', $val); // Retourne ["nom", "ISSA"] et moi je veux que ISSA
-                    array_push($toutesMesDonnees, $data[1]); // $data[1] c'est le deuxieme élément (ce qui est après le ':')
+                foreach($a as $val) {
+                    $data = explode(':', $val);
+                    if($data[1] != null)
+                        array_push($toutesMesDonnees, $data[1]);
                 }
-                var_dump($toutesMesDonnees);
+                $this->modele->insererEtudiant($toutesMesDonnees);
+                $this->modele->insererEntreprise($toutesMesDonnees);
 
-
-
-
-
+                $this->modele->insererTuteurEntreprise($toutesMesDonnees);
+                $this->modele->insererTuteurPedagogique($toutesMesDonnees);
+                /*
+                $dossierPdf = "./upload/$pdf";
+                $this->modele->insererConventionStage($dossierPdf);
+                */
+                /*
+                $this->modele->insererStage($toutesMesDonnees);
+                */
             }
             else {
                 echo 'Echec de l\'upload !';
