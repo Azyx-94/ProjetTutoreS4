@@ -23,7 +23,7 @@ class ContConventionStage
 
     public function envoiPDF() {
         $dossier = 'upload/';
-        $fichier = basename($_FILES['fichierConvention']['name']);
+        $pdf = basename($_FILES['fichierConvention']['name']);
         $extensions = array('.pdf');
         $extension = strrchr($_FILES['fichierConvention']['name'], '.');
 
@@ -31,18 +31,36 @@ class ContConventionStage
             $this->vue->render("FichiersHTML/ErreurFichier.html");
         }
         else {
-            $fichier = strtr($fichier,
-                'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ',
-                'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
-            $fichier = preg_replace('/([^.a-z0-9]+)/i', '-', $fichier);
+            $pdf = strtr($pdf,'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ','AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
+            $pdf = preg_replace('/([^.a-z0-9]+)/i', '-', $pdf);
 
-            if(move_uploaded_file($_FILES['fichierConvention']['tmp_name'], $dossier . $fichier)) {
-                echo 'Upload effectué avec succès !';
+            if(move_uploaded_file($_FILES['fichierConvention']['tmp_name'], $dossier . $pdf)) {
+                include("./DOSSIER-PDF2TEXT/PdfToText.phpclass");
+                $pdf = new PdfToText("./upload/$pdf");
+                $text = $pdf->Text;
+                $textWithLineBreaks = nl2br($text);
+                echo $textWithLineBreaks;
+
+                $a = explode("\n", $textWithLineBreaks);
+                var_dump($a);
+                echo'<br>';
+                $toutesMesDonnees = array();
+                foreach($a as $val) { // J'avoue j'ai oublié la syntaxe du foreach en PHP
+                    $data = explode(':', $val); // Retourne ["nom", "ISSA"] et moi je veux que ISSA
+                    array_push($toutesMesDonnees, $data[1]); // $data[1] c'est le deuxieme élément (ce qui est après le ':')
+                }
+                var_dump($toutesMesDonnees);
+
+
+
+
+
             }
             else {
-                echo 'POURQUOI SA MARCHE PAS FRERE...';
+                echo 'Echec de l\'upload !';
             }
         }
+
     }
 
 }
