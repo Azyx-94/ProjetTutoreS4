@@ -33,6 +33,7 @@ class ContConventionStage
         else {
             $pdf = strtr($pdf,'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ','AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
             $pdf = preg_replace('/([^.a-z0-9]+)/i', '-', $pdf);
+            $nomPdf = $pdf;
 
             if(move_uploaded_file($_FILES['fichierConvention']['tmp_name'], $dossier . $pdf)) {
                 include("./DOSSIER-PDF2TEXT/PdfToText.phpclass");
@@ -41,25 +42,21 @@ class ContConventionStage
                 $textWithLineBreaks = nl2br($text);
 
                 $a = explode("\n", $textWithLineBreaks);
-                echo'<br>';
                 $toutesMesDonnees = array();
                 foreach($a as $val) {
                     $data = explode(':', $val);
-                    if($data[1] != null)
+                    if ($data[1] != null) {
                         array_push($toutesMesDonnees, $data[1]);
+                    }
                 }
                 $this->modele->insererEtudiant($toutesMesDonnees);
+                $this->modele->insererStage($toutesMesDonnees);
                 $this->modele->insererEntreprise($toutesMesDonnees);
-
                 $this->modele->insererTuteurEntreprise($toutesMesDonnees);
                 $this->modele->insererTuteurPedagogique($toutesMesDonnees);
-                /*
-                $dossierPdf = "./upload/$pdf";
-                $this->modele->insererConventionStage($dossierPdf);
-                */
-                /*
-                $this->modele->insererStage($toutesMesDonnees);
-                */
+                $pathPdf = "./upload/$nomPdf";
+                $this->modele->insererConventionStage($pathPdf);
+                $this->vue->render("FichiersHTML/ConventionStageInseree.html");
             }
             else {
                 echo 'Echec de l\'upload !';
