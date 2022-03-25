@@ -8,11 +8,7 @@ class VueConventionStage
     }
 
     public function afficheAccueilConventionStage() {
-        $this->render("ConventionStage.html");
-    }
-
-    public function affichePDF() {
-        $this->render("PDF.html");
+        $this->render("FichiersHTML/ConventionStage.html");
     }
 
     public function render($path,$data=null) {

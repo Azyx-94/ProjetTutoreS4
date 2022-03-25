@@ -41,21 +41,31 @@ class ContConventionStage
                 $text = $pdf->Text;
                 $textWithLineBreaks = nl2br($text);
 
-                $a = explode("\n", $textWithLineBreaks);
-                $toutesMesDonnees = array();
+                $a = explode("\n", $textWithLineBreaks); // Une ligne
+                $donnees = array();
                 foreach($a as $val) {
-                    $data = explode(':', $val);
-                    if ($data[1] != null) {
-                        array_push($toutesMesDonnees, $data[1]);
+                    $data = explode(':', $val); // On sépare les mots de chaque ligne par les :
+                    if (array_key_exists(1,$data)) {
+                        $dataVal1 = str_replace("  ","",$data[1]);
+                        $dataVal = str_replace("<br />","",$dataVal1);
+                        array_push($donnees, $dataVal);
                     }
                 }
-                $this->modele->insererEtudiant($toutesMesDonnees);
-                $this->modele->insererStage($toutesMesDonnees);
-                $this->modele->insererEntreprise($toutesMesDonnees);
-                $this->modele->insererTuteurEntreprise($toutesMesDonnees);
-                $this->modele->insererTuteurPedagogique($toutesMesDonnees);
-                $pathPdf = "./upload/$nomPdf";
-                $this->modele->insererConventionStage($pathPdf);
+                try {
+                    $numeroEtudiant = $this->modele->insererEtudiant($donnees);
+                    $pathPdf = "./upload/$nomPdf";
+                    $convention_stage_id = $this->modele->insererConventionStage($pathPdf);
+                    $id_stage = $this->modele->insererStage($donnees);
+                    $id_entreprise = $this->modele->insererEntreprise($donnees);
+                    $id_tuteur_stage = $this->modele->insererTuteurEntreprise($donnees);
+                    $this->modele->insererTuteurPedagogique($donnees);
+                    $this->modele->insererConventionStageEtudiant($convention_stage_id, $numeroEtudiant);
+                    $this->modele->insererEtudiantStage($numeroEtudiant, $id_stage);
+                    $this->modele->insererEntrepriseStage($id_entreprise, $id_stage);
+                    $this->modele->insererEntrepriseTuteurStage($id_entreprise, $id_tuteur_stage);
+                } catch(DonneesManquantes $d) {
+                    $this->vue->render("FichiersHTML/ErreurDonnees.html");
+                }
                 $this->vue->render("FichiersHTML/ConventionStageInseree.html");
             }
             else {
