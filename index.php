@@ -34,6 +34,10 @@
                 include_once 'Modules/ModPersonnel/ModPersonnel.php';
                 $mod = new ModPersonnel();
                 break;
+            case 'ModStage':
+                include_once 'Modules/ModStage/ModStage.php';
+                $mod = new ModStage();
+                break;
             default:
                 include_once 'Modules/ModAccueil/ModAccueil.php';
                 $mod = new ModAccueil();

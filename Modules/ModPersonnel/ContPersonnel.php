@@ -105,7 +105,8 @@ class ContPersonnel
             $this->vue->render("FichiersHTML/nestPasConnecte.html");
         }
         else {
-            $this->vue->listeConventionStage();
+            $this->tab = $this->modele->listeConventionStage();
+            $this->vue->listeConventionStage($this->tab);
         }
     }
 

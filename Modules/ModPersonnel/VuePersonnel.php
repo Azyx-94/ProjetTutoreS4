@@ -19,8 +19,13 @@ class VuePersonnel
         $this->render("FichiersHTML/Personnel.html");
     }
 
-    public function listeConventionStage() {
-        $this->render("FichiersHTML/listeConventionStage.html");
+    public function listeConventionStage($tab) {
+        $this->render("FichiersHTML/listeConventionStage.php");
+        if(isset($tab) && !empty($tab)){
+            foreach ($tab as $value){
+                echo "<div>Convention n°".$value->convention_stage_id." de l'étudiant : " .$value->nom .$value->prenom.".<br>Url de la convention : ".$value->url. "</div>";
+            }
+        }
     }
 
     public function deconnexion() {
