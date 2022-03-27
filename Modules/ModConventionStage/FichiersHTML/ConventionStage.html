@@ -1,8 +1,4 @@
-<head>
-  <link rel="stylesheet" href="css/conventionStage.css">
-</head>
-
-<section>
+<section class="AP">
   <p class ="Annonce">
     Vous téléchargez votre convention de stage<br>
     Nous analysons les informations<br>
@@ -18,6 +14,9 @@
     <img class ="imgFILE" src="./Images/FILE.png"  width ="90" height="90" alt="" />
   </div>
   <div class="inputFILE">
-    <input data-testid="conventionStage-upload" id="file-upload" class="uploadZone" type="file">
+    <form class="form" action="index.php?module=ModConvention&action=envoiPDF" enctype="multipart/form-data" method="post">
+        <input type="file" name="fichierConvention" class="uploadZone" >
+        <input type="submit" name="submit" class="submit" value="Envoyer la convention de stage">
+    </form>
   </div>
 </section>
