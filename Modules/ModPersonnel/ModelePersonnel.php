@@ -39,7 +39,7 @@ class ModelePersonnel extends Connexion
     }
 
     public function listeConventionStage() {
-        $req = self::$bdd->prepare("SELECT * FROM convention_stage natural join etudiant;");
+        $req = self::$bdd->prepare("SELECT * FROM etudiant join convention_stage;");
         $req->execute();
         $res = $req->fetchAll();
         return $res;

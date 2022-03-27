@@ -17,7 +17,8 @@ class ContStage
     }
 
     public function afficheListeStage() {
-
+        $this->tab = $this->modele->afficheListeStage();
+        $this->vue->afficheListeStage($this->tab);
     }
 
 }

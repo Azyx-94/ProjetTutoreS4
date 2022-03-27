@@ -10,6 +10,7 @@ class ContPersonnel
 
     private $modele;
     private $vue;
+    private $tab;
 
     public function __construct() {
         $this->modele =new ModelePersonnel();

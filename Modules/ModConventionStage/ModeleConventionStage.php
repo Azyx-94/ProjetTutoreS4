@@ -56,15 +56,15 @@ class ModeleConventionStage extends Connexion
 
     public function insererStage($data) {
         self::$bdd->beginTransaction();
-        $req = self::$bdd->prepare("INSERT into stage (description, adresse, duree, debutStage, finStage, codePostal, ville) 
-        values (:description, :adresse, :duree, :debutStage, :finStage, :codePostal, :ville);");
+        $req = self::$bdd->prepare("INSERT into stage (description, adresseStage, duree, debutStage, finStage, codePostalStage, villeStage) 
+        values (:description, :adresseStage, :duree, :debutStage, :finStage, :codePostalStage, :villeStage);");
         $req->bindParam("description",$data[13]);
-        $req->bindParam("adresse",$data[14]);
+        $req->bindParam("adresseStage",$data[14]);
         $req->bindParam("duree",$data[20]);
         $req->bindParam("debutStage", $data[18]);
         $req->bindParam("finStage",$data[19]);
-        $req->bindParam("codePostal",$data[15]);
-        $req->bindParam("ville",$data[16]);
+        $req->bindParam("codePostalStage",$data[15]);
+        $req->bindParam("villeStage",$data[16]);
         try {
             $req->execute();
         } catch(PDOException $d){
@@ -79,11 +79,11 @@ class ModeleConventionStage extends Connexion
 
     public function insererEntreprise($data) {
         self::$bdd->beginTransaction();
-        $req = self::$bdd->prepare("INSERT into entreprise (nom, telephone, mail) 
-        values (:nom, :telephone, :mail);");
-        $req->bindParam("nom",$data[10]);
-        $req->bindParam("telephone",$data[11]);
-        $req->bindParam("mail",$data[12]);
+        $req = self::$bdd->prepare("INSERT into entreprise (nomEntreprise, telephoneEntreprise, mailEntreprise) 
+        values (:nomEntreprise, :telephoneEntreprise, :mailEntreprise);");
+        $req->bindParam("nomEntreprise",$data[10]);
+        $req->bindParam("telephoneEntreprise",$data[11]);
+        $req->bindParam("mailEntreprise",$data[12]);
         try {
             $req->execute();
         } catch(PDOException $d){

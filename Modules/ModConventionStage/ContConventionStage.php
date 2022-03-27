@@ -325,43 +325,45 @@ class ContConventionStage
             $pdf = $this->replaceSpecialChar($pdf);
             $pdf = preg_replace('/([^.a-z0-9]+)/i', '-', $pdf);
             $nomPdf = $pdf;
-
-            if (move_uploaded_file($_FILES['fichierConvention']['tmp_name'], $dossier . $pdf)) {
-                include("./DOSSIER-PDF2TEXT/PdfToText.phpclass");
-                $pdf = new PdfToText("./upload/$pdf");
-                $text = $pdf->Text;
-                $textWithLineBreaks = nl2br($text);
-                $ligne = explode("\n", $textWithLineBreaks);
-                $donnees = array();
-                foreach ($ligne as $val) {
-                    $data = explode(':', $val);
-                    if (array_key_exists(1, $data)) {
-                        $dataVal2 = $this->replaceSpecialChar($data[1]);
-                        $dataVal1 = str_replace("<br />", "", $dataVal2);
-                        $dataVal = str_replace("  ", "", $dataVal1);
-                        array_push($donnees, $dataVal);
-                    }
-                }
-                try {
-                    $numeroEtudiant = $this->modele->insererEtudiant($donnees);
-                    $pathPdf = "./upload/$nomPdf";
-                    $convention_stage_id = $this->modele->insererConventionStage($pathPdf);
-                    $id_stage = $this->modele->insererStage($donnees);
-                    $id_entreprise = $this->modele->insererEntreprise($donnees);
-                    $id_tuteur_stage = $this->modele->insererTuteurEntreprise($donnees);
-                    $this->modele->insererTuteurPedagogique($donnees);
-                    $this->modele->insererConventionStageEtudiant($convention_stage_id, $numeroEtudiant);
-                    $this->modele->insererEtudiantStage($numeroEtudiant, $id_stage);
-                    $this->modele->insererEntrepriseStage($id_entreprise, $id_stage);
-                    $this->modele->insererEntrepriseTuteurStage($id_entreprise, $id_tuteur_stage);
-                } catch (DonneesManquantes $d) {
-                    $this->vue->render("FichiersHTML/ErreurDonnees.html");
-                }
-                $this->vue->render("FichiersHTML/ConventionStageInseree.html");
+            $pathPdf = "./upload/$nomPdf";
+            if(file_exists($pathPdf)) {
+                $this->vue->render("FichiersHTML/FichierDejaExistant.html");
             }
-
             else {
-                echo "Echec de l'upload !";
+                if (move_uploaded_file($_FILES['fichierConvention']['tmp_name'], $dossier . $pdf)) {
+                    include("./DOSSIER-PDF2TEXT/PdfToText.phpclass");
+                    $pdf = new PdfToText("./upload/$pdf");
+                    $text = $pdf->Text;
+                    $textWithLineBreaks = nl2br($text);
+                    $ligne = explode("\n", $textWithLineBreaks);
+                    $donnees = array();
+                    foreach ($ligne as $val) {
+                        $data = explode(':', $val);
+                        if (array_key_exists(1, $data)) {
+                            $dataVal2 = $this->replaceSpecialChar($data[1]);
+                            $dataVal1 = str_replace("<br />", "", $dataVal2);
+                            $dataVal = str_replace("  ", "", $dataVal1);
+                            array_push($donnees, $dataVal);
+                        }
+                    }
+                    try {
+                        $numeroEtudiant = $this->modele->insererEtudiant($donnees);
+                        $convention_stage_id = $this->modele->insererConventionStage($pathPdf);
+                        $id_stage = $this->modele->insererStage($donnees);
+                        $id_entreprise = $this->modele->insererEntreprise($donnees);
+                        $id_tuteur_stage = $this->modele->insererTuteurEntreprise($donnees);
+                        $this->modele->insererTuteurPedagogique($donnees);
+                        $this->modele->insererConventionStageEtudiant($convention_stage_id, $numeroEtudiant);
+                        $this->modele->insererEtudiantStage($numeroEtudiant, $id_stage);
+                        $this->modele->insererEntrepriseStage($id_entreprise, $id_stage);
+                        $this->modele->insererEntrepriseTuteurStage($id_entreprise, $id_tuteur_stage);
+                    } catch (DonneesManquantes $d) {
+                        $this->vue->render("FichiersHTML/ErreurDonnees.html");
+                    }
+                    $this->vue->render("FichiersHTML/ConventionStageInseree.html");
+                } else {
+                    echo "Echec de l'upload !";
+                }
             }
 
         }

@@ -20,12 +20,19 @@ class VuePersonnel
     }
 
     public function listeConventionStage($tab) {
-        $this->render("FichiersHTML/listeConventionStage.php");
+        echo "<section class ='listeLiensConventions'>";
+        echo "<div>";
+        echo "<br>";
         if(isset($tab) && !empty($tab)){
             foreach ($tab as $value){
-                echo "<div>Convention n°".$value->convention_stage_id." de l'étudiant : " .$value->nom .$value->prenom.".<br>Url de la convention : ".$value->url. "</div>";
+                echo "<a class ='liensConventions' href='$value->url'>--> Convention de l'étudiant : $value->nom $value->prenom</a></br>";
             }
         }
+        else {
+            echo"<p class ='aucuneConvention'> Il n'y a aucune convention de stage déposé pour le moment</p>";
+        }
+        echo "</div>";
+        echo "</section>";
     }
 
     public function deconnexion() {

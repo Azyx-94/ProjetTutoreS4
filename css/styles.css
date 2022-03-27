@@ -307,6 +307,57 @@ main {
     color:black;
 }
 
+.listeLiensConventions {
+    width:800px;
+    height:400px;
+    margin-top:50px;
+    margin-left:350px;
+    background-color:#FFFFFF;
+}
+
+.liensConventions {
+    color:black;
+    font-family:Calibri, sans-serif;
+    font-size:15px;
+    margin-left:20px;
+}
+
+.aucuneConvention {
+    font-family:Calibri, sans-serif;
+    font-weight:bold;
+    font-size:25px;
+    margin-left:90px;
+    padding-top:120px;
+    color:black;
+}
+
+/*Les Stages*/
+
+.listeInfosStage {
+    width:1000px;
+    height:400px;
+    margin-top:50px;
+    margin-left:275px;
+    padding-top:10px;
+    background-color:#FFFFFF;
+}
+
+.infosStage {
+    color:black;
+    font-family:Calibri, sans-serif;
+    font-size:15px;
+    margin-left:20px;
+}
+
+.aucunStage {
+    font-family:Calibri, sans-serif;
+    font-weight:bold;
+    font-size:25px;
+    margin-left:275px;
+    padding-top:120px;
+    color:black;
+}
+
 /****************************************************/
 /* FOOTER */
 /****************************************************/
